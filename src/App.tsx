@@ -13,7 +13,7 @@ export default function App() {
           playsInline
           className="w-full h-full object-cover opacity-60"
         >
-          <source src="https://media.chisto-studio.ru/videos/20260210_background.mp4" type="video/mp4" />
+          <source src="https://media.chisto-studio.ru/videos/20260210_background.webm" type="video/webm" />
         </video>
         {/* Dark Overlay for Readability */}
         <div className="absolute inset-0 bg-black/40" />

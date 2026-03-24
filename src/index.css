@@ -1,16 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:wght,wdth@300..800,75..150&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Michroma", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "TikTok Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "TikTok Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   body {
     @apply bg-black text-white antialiased overflow-x-hidden;
     font-family: var(--font-sans);
+    font-variation-settings: 'wght' 350, 'wdth' 100;
+  }
+
+  h1, h2, h3, .font-bold, .font-display-bold {
+    font-variation-settings: 'wght' 700, 'wdth' 150 !important;
+  }
+
+  .small-heading {
+    font-variation-settings: 'wght' 500, 'wdth' 150 !important;
   }
 }
 
@@ -20,6 +28,7 @@
   }
   
   .pill-tag {
-    @apply px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-display font-medium;
+    @apply px-4 py-1.5 border border-white/20 rounded-full text-[10px] tracking-widest uppercase font-medium;
+    font-variation-settings: 'wght' 500, 'slnt' 0, 'wdth' 150;
   }
 }

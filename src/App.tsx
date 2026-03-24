@@ -4,8 +4,23 @@ import { motion } from 'motion/react';
 export default function App() {
   return (
     <main className="relative min-h-screen w-full bg-black text-white p-6 md:p-16 flex flex-col justify-between select-none overflow-hidden">
+      {/* Background Video */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-60"
+        >
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_024928_1efd0b0d-6c02-45a8-8847-1030900c4f63.mp4" type="video/mp4" />
+        </video>
+        {/* Dark Overlay for Readability */}
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
       {/* Top Navigation */}
-      <div className="flex flex-col sm:flex-row justify-between items-start w-full gap-8 sm:gap-0">
+      <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start w-full gap-8 sm:gap-0">
         <div className="flex flex-col gap-1">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +68,7 @@ export default function App() {
       </div>
 
       {/* Middle Right: Technical Specs */}
-      <div className="absolute right-16 top-1/2 -translate-y-1/2 hidden lg:block w-80">
+      <div className="absolute right-16 top-1/2 -translate-y-1/2 z-10 hidden lg:block w-80">
         <h3 className="text-[11px] tracking-[0.2em] font-display font-bold mb-6 uppercase">Technical Specs</h3>
         <div className="space-y-4">
           {[
@@ -71,7 +86,7 @@ export default function App() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-8 mt-12 md:mt-0">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-8 mt-12 md:mt-0">
         {/* Glass Card */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
@@ -104,10 +119,6 @@ export default function App() {
         </div>
       </div>
 
-      {/* Background Decorative Elements */}
-      <div className="fixed inset-0 pointer-events-none z-[-1]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px]" />
-      </div>
     </main>
   );
 }

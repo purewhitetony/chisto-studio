@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const translations = {
   en: {
-    title: "CHISTO-STUDIO // \nDESIGN PORTFOLIO",
+    title: "ANTON's \nCHISTIAKOV// \nWΞB STUDIO",
     description: "Crafting high-end digital experiences and a zero-gravity aesthetic for those who don't just watch the future—they build it. Shift your vision.",
     nextProject: "NEXT PROJECT",
     techSpecs: "Technical Specs",
@@ -17,10 +17,11 @@ const translations = {
     cardTitle: "AC-01: PORTFOLIO CORE",
     cardDesc: "High-resolution optics and a light frame for comfort and clarity. Optimized for modern web standards.",
     viewCaseStudy: "View Case Study",
-    tags: ['UI/UX', 'A+', 'ULTRA-WIDE', 'NEURAL-SYNC']
+    tags: ['UI/UX', 'A+', 'ULTRA-WIDE', 'NEURAL-SYNC'],
+    scroll: "Scroll"
   },
   ru: {
-    title: "ЧИСТО СТУДИЯ // \nДИЗАЙН ПОРТФОЛИО",
+    title: "ВΞБ \nСТУДИЯ// \nАНТОНА \nЧИСТЯКОВА",
     description: "Создание высококлассного цифрового опыта и эстетики нулевой гравитации для тех, кто не просто наблюдает за будущим, а строит его. Измените свое видение.",
     nextProject: "СЛЕДУЮЩИЙ ПРОЕКТ",
     techSpecs: "Тех. характеристики",
@@ -33,7 +34,8 @@ const translations = {
     cardTitle: "AC-01: ЯДРО ПОРТФОЛИО",
     cardDesc: "Оптика высокого разрешения и легкая рама для комфорта и четкости. Оптимизировано для современных веб-стандартов.",
     viewCaseStudy: "Посмотреть кейс",
-    tags: ['UI/UX', 'A+', 'ULTRA-WIDE', 'NEURAL-SYNC']
+    tags: ['UI/UX', 'A+', 'ULTRA-WIDE', 'NEURAL-SYNC'],
+    scroll: "Листайте"
   }
 };
 
@@ -52,7 +54,7 @@ export default function App() {
           playsInline
           className="w-full h-full object-cover opacity-60"
         >
-          <source src="https://media.chisto-studio.ru/videos/20260210_background.webm" type="video/webm" />
+          <source src="https://media.chisto-studio.ru/videos/anton_background.mp4" type="video/mp4" />
         </video>
         {/* Dark Overlay for Readability */}
         <div className="absolute inset-0 bg-black/40" />
@@ -112,7 +114,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 sm:gap-8 text-[9px] sm:text-[10px] tracking-[0.2em] font-medium text-white/40 self-end sm:self-start mt-14 sm:mt-12">
+        <div className="flex items-center gap-4 sm:gap-8 text-[9px] sm:text-[10px] tracking-[0.2em] font-medium text-white/40 self-end sm:self-start mt-[62px]">
           <span>1/26</span>
           <div className="hidden sm:block w-24 h-[1px] bg-white/20 relative">
             <div className="absolute top-0 left-0 w-1/3 h-full bg-white" />
@@ -122,6 +124,30 @@ export default function App() {
           </span>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-3"
+      >
+        <div className="w-5 h-8 border-2 border-white/20 rounded-full relative flex justify-center rotate-180">
+          <motion.div 
+            animate={{ 
+              y: [4, 16, 4],
+              opacity: [0.2, 1, 0.2]
+            }}
+            transition={{ 
+              duration: 2, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="w-0.5 h-1.5 bg-white rounded-full mt-1"
+          />
+        </div>
+        <span className="text-[8px] tracking-[0.3em] text-white/30 uppercase font-medium small-heading">{t.scroll}</span>
+      </motion.div>
 
       {/* Middle Right: Technical Specs */}
       <div className="absolute right-16 top-1/2 -translate-y-1/2 z-10 hidden lg:block w-80">
